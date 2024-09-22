@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codigo Fibonacci</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    Digite um número: <input id="numero" type="number" /> <br />
+    <button onclick="fibonacci()">Exibir</button><br />
+    <div id="resposta"></div>
+
+    <script>
+      function fibonacci() {
+        var termo = parseInt(document.getElementById("numero").value);
+        var resposta = document.getElementById("resposta");
+        var penultimo = 0;
+        var ultimo = 1;
+        var numero = 0;
+
+        while (numero < termo) {
+          numero = ultimo + penultimo;
+          penultimo = ultimo;
+          ultimo = numero;
+        }
+
+        resposta.innerHTML = ultimo == termo ? "Pertence ao Fibonacci" : "Não pertence ao Fibonacci";
+      }
+    </script>
+  </body>
+</html>
