@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atividade 02</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    Insira uma palavra: <input id="palavra" type="text" /> <br />
+    <button onclick="buscarLetraA()">Buscar</button><br />
+
+    <span id="resposta"></span>
+
+    <script>
+      function buscarLetraA() {
+        var palavra = document.getElementById("palavra").value;
+        var resposta = document.getElementById("resposta");
+
+        resposta.innerHTML = `Existem ${
+          palavra
+            .normalize("NFD")
+            .replace(/\p{Diacritic}/gu, "")
+            .toLowerCase()
+            .split("a").length - 1
+        } Letras A na palavra digitada`;
+      }
+    </script>
+  </body>
+</html>
