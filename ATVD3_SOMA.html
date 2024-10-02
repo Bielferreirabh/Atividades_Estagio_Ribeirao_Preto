@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atividade 3</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body onload="calcSoma()">
+    <div id="resposta"></div>
+
+    <script>
+      function calcSoma() {
+        var resposta = document.getElementById("resposta");
+        var indice = 12;
+        var soma = 0;
+        var k = 1;
+
+        while (k < indice) {
+          k = k + 1;
+          soma = soma + k;
+        }
+
+        resposta.innerHTML = "O Resultado da variável SOMA é: " + soma;
+      }
+    </script>
+  </body>
+</html>
